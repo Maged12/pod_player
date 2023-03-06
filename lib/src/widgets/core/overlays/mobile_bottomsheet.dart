@@ -202,7 +202,7 @@ class _MobileOverlayBottomControlles extends StatelessWidget {
         children: [
           Row(
             children: [
-              const SizedBox(width: 12),
+              const SizedBox(width: 12,height: 35),
               GetBuilder<PodGetXVideoController>(
                 tag: tag,
                 id: 'video-progress',
@@ -226,30 +226,30 @@ class _MobileOverlayBottomControlles extends StatelessWidget {
                 },
               ),
               const Spacer(),
-              MaterialIconButton(
-                toolTipMesg: _podCtr.isFullScreen
-                    ? _podCtr.podPlayerLabels.exitFullScreen ??
-                        'Exit full screen${kIsWeb ? ' (f)' : ''}'
-                    : _podCtr.podPlayerLabels.fullscreen ??
-                        'Fullscreen${kIsWeb ? ' (f)' : ''}',
-                color: itemColor,
-                onPressed: () {
-                  if (_podCtr.isOverlayVisible) {
-                    if (_podCtr.isFullScreen) {
-                      _podCtr.disableFullScreen(context, tag);
-                    } else {
-                      _podCtr.enableFullScreen(tag);
-                    }
-                  } else {
-                    _podCtr.toggleVideoOverlay();
-                  }
-                },
-                child: Icon(
-                  _podCtr.isFullScreen
-                      ? Icons.fullscreen_exit
-                      : Icons.fullscreen,
-                ),
-              ),
+              // MaterialIconButton(
+              //   toolTipMesg: _podCtr.isFullScreen
+              //       ? _podCtr.podPlayerLabels.exitFullScreen ??
+              //           'Exit full screen${kIsWeb ? ' (f)' : ''}'
+              //       : _podCtr.podPlayerLabels.fullscreen ??
+              //           'Fullscreen${kIsWeb ? ' (f)' : ''}',
+              //   color: itemColor,
+              //   onPressed: () {
+              //     if (_podCtr.isOverlayVisible) {
+              //       if (_podCtr.isFullScreen) {
+              //         _podCtr.disableFullScreen(context, tag);
+              //       } else {
+              //         _podCtr.enableFullScreen(tag);
+              //       }
+              //     } else {
+              //       _podCtr.toggleVideoOverlay();
+              //     }
+              //   },
+              //   child: Icon(
+              //     _podCtr.isFullScreen
+              //         ? Icons.fullscreen_exit
+              //         : Icons.fullscreen,
+              //   ),
+              // ),
             ],
           ),
           GetBuilder<PodGetXVideoController>(
